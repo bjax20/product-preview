@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+    :root {
+        --cream-bg: hsl(30, 38%, 92%);
+        --dark-green: hsl(158, 36%, 37%);
+        --dark-grayish-blue: hsl(228, 12%, 48%);
+        --very-dark-blue: hsl(212, 21%, 14%);
+        --white: hsl(0, 0%, 100%);
+    }
+
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream-bg);
+    min-height: 100vh;
+    padding: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.card__image img{
+    max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.card__content{
+    padding: 1rem;
+    padding-top: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+
+.card__category{
+    text-transform: uppercase;
+    color: var(--dark-grayish-blue);
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
+}
+
+.card__title{
+    color: var(--very-dark-blue);
+    font-size: 2rem;
+    font-family: "Fraunces", serif;
+}
+
+.card__description{
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--dark-grayish-blue);
+}
+
+.card__price{
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+
+}
+
+
+.price--current{
+    color: var(--dark-green);
+    font-size: 2.2rem;
+    font-family: 'Fraunces', serif;
+}
+
+.price--original{
+    font-size: 0.9rem;
+    color: var(--dark-grayish-blue)
+}
+
+.card__button{
+    background-color: var(--dark-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+    font-size: 0.97rem;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Desktop view */
+@media (min-width: 600px){
+    /* For desktop view, we will make it a row and make the width limit of 600px */
+    .card{
+        display: flex;
+        flex-direction: row;
+        max-width: 600px;
+    }
+    /* For the product image and content, this will make sure they both have 50% of the width of the main card section */
+    .card__image, .card__content{
+        width: 50%;
+        gap: 1.1rem;
+    }
+
+    /* This is just to ensure the typography */
+    .card__title{
+        margin-top: 0.1rem;
+        line-height: 33px;
+        font-size: 2rem;
+        letter-spacing: 0.0001px;
+    }
+    /* To ensure its height will cover the whole height of the main card section, let's make the height 100% */
+    /* We have to add a radius on the bottom since it's too sharp on the Desktop view */
+     .card__image img {
+            height: 100%;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 10px;
+        }
+
+    /* Adjusting of padding for the Desktop view */
+    .card__content {
+            padding: 2rem; 
+        }
+
+
+}
